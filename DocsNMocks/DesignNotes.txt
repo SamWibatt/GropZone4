@@ -1,0 +1,195 @@
+(Stream-of-consciousness development notes, left in midstream when the project was satisfactory. Reverse chronological order.)
+
+5/21 
+Not done yet! Let's do the following:
+DO THIS: have it so cancel in-game goes to the menu
+DO THIS: do conditional compile for droid (and ios?) that puts up drop and exit buttons in game and main menu 
+  I guess call it a Fire button, and put it where? Next to the screen on the right, say, and the drop button is next to the
+  screen on the left.
+- Once got that working, send to Dad and see if it'll work on his tablet and phone.
+
+So basically, platform-dependent input.
+
+Turns out you can't simulate touch in the editor with a mouse - how do you do multitouch? But people have written fakes for single touch.
+
+http://answers.unity3d.com/questions/448771/simulate-touch-with-mouse.html
+
+My first attempt at a solution totally didn't work, dunno why. Trying the approach on http://answers.unity3d.com/questions/652927/touch-input-on-sprites.html
+
+5/19
+moved the sky back to avoid z errors on android.
+
+Installing android stuff n java on takkun - might do so on parappa, too, if I decide it as the powerful puter is the one to use for builds.
+
+OK - that all worked finally after I got a few rounds of this:
+
+CommandInvokationFailure: Failed to re-package resources. See the Console for details.
+G:\android-sdk-windows\build-tools\24.0.0-preview\aapt.exe package --auto-add-overlay -v -f -m -J gen -M AndroidManifest.xml -S "res" -I "G:/android-sdk-windows\platforms\android-23\android.jar" -F bin/resources.ap_
+
+And then I uninstalled the preview build tools and everything worked fine. Copied the takkun-built GropZoneTestv3b.apk to drive.
+
+And yay! It's hitchy but worky on the tableet
+
+5/18b
+YAY the counters basically work!
+The digit sprites look a bit wonky and can rope in pieces of the neighboring ones. I will fiddle their borders to avoid.
+
+AND NOW IT LOOKS AWESOME
+
+about all that's left is to do 
+DONE: Plane speed increase for high scores
+DONE: sky
+DONE: wood grain
+DONE: Game over check - once done, scrub all the sprites, wait a second, blip back to menu scene.
+
+NEXT UP:
+- starting instructions / ui stuff - I created a MenuScene which looks just like MainScene but for Floor.
+  I think tttd is to put some instructions up on that, really basic, then swap to MainScene
+  Have scores shown behind tape so (blue grop) = 1 point is under blue tape, etc.
+DONE: Esc at main menu drops out of the game.
+- DON'T FORGET THE STICKERS - Maybe just put the counters up?
+AND THAT SHOULD BE THAT
+
+5/18
+Very blurrily on the flyer scan it looks like the stickers say SCORE and 
+ BOMBS
+DROPPED
+
+in nice blocky no-nonsense sans serif. I think I'll go with SHOES LEFT and count down.
+
+Need to do the fancy blue gradient sky too
+
+And actually the audio lag on my phone isn't so bad. Need to try the tablet.
+
+So do I really want these to be Sprite-style texture? They have to be, to use the sprite editor. Lemme see what I can do with 'em
+
+OK, now I've used the sprite editor to cut it up into Digit_0 through Digit_9 plus Sticker_Score and Sticker_Shoes.
+
+ALSO snagged WoodFine0016_M.jpg from textures.com which should be a good simulated wood grain texture.
+
+So why not try to make a class called CounterPrefab that has a tens digit, a ones digit, a sticker, and all it does is sit there showing a 2-digit number.
+
+Mocked it up for score and shoes, and the score one has a top level transform of -4.4, 2 
+Tens is 0,0 relative to it - I think I'll get rid of that level of hierarchy and just put the digit sprites directly in
+Ones is 0.65, 0 relative to it
+Sticker is -0.028, -0.609
+
+Shoes main xform is -4.4, 0.7
+Digits same relative
+Sticker .599, -.886
+
+5/17b
+Created NumberSprites.png, which will hold the digits for score and shoe count and then there'll be some more room for the stickers that have the words
+"score" and "shoes" on them (and which go on the same layer as the bezel and block everything. They can be bigger than 64x64, of course)
+DIGITS SHOULD HAVE SOME SPACE IN BETWEEN so auto sprite cutter can find them all
+Do I want to use sprites?
+
+Well, I made numbers. Still need stickers. Do nice fake edge with two black edges and two white edges, maybe a little peely
+
+5/17: Android build works great, but sound lags
+
+- maybe see this http://forum.unity3d.com/threads/android-sound-latency-fix.319943/ - original link is dead so I put AudioFixPluginForAndroid.zip in DocsNMocks
+
+Or this https://www.assetstore.unity3d.com/en/#!/content/35295
+
+5/16
+Downloaded the dexed DX7 emulator - saved in UnityResearch, which I need to back up - see if it works in audacity! Copied the DLL to 
+Audacity's plugins dir. But drat, looks like these VSTi things aren't supported.
+Found some other plugins at http://free-loops.com/free-synths-vsts.html
+
+And grabbed the psycle music thing - Dexed works in that!
+ANd I grabbed what claims to be 3000 presets from http://www.themusicproducerblog.com/2014/12/yamaha-dx7-dexed-plugin-3000-soundbanks.html
+file called DX7_AllTheWeb.zip - not sure re: legal status tho, looks like it came from here http://bobbyblues.recup.ch/yamaha_dx7/dx7_patches.html
+where the guy says he got them all for free online and invites anyone who owns them to say they're not OK.
+Tim Garrett /YAMEFX has the "St. Helens" one I remember
+
+Searching "explosion" on Freesound turned up some goodies. I'd rather have a splat, but wev - here are a few nice ones
+https://www.freesound.org/people/Aiwha/sounds/250712/
+https://www.freesound.org/people/jobro/sounds/35460/ (shorten and stuff, nice and synthy, attribution license)
+https://www.freesound.org/people/Nbs%20Dark/sounds/94185/ (Good solid noisy short explosion, sounds like something you'd hear from an old cabinet - cc0)
+https://www.freesound.org/people/Apenguin73/sounds/335152/ (percussive, needs a shorter tail, cc0)
+https://www.freesound.org/people/killkhan/sounds/150210/ (synthy and gamey, not for commercial use)
+
+So I saved that third one as 94185__nbs-dark__explosion.wav in DocsNMocks and will fiddle it up to be like I want.
+
+ACTUALLY I SEARCHED FOR FART ON FREESOUND AND FOUND A FINE ONE - https://www.freesound.org/people/timtube/sounds/61046/ - attribution, noncommercial. Good "dude you beefed" but also plausibly a splatter
+https://www.freesound.org/people/oldedgar/sounds/97979/ is cc0, editing down a bit could work
+Grabbed as 97979__oldedgar__raspberry.aif
+Made a short sample, raspberry.wav
+
+
+5/15b
+Got the grops moving! I guess now I need to make them get hit n stuff
+AND NOW THEY DO!
+Should do something like switch the texture to splatter instead of disappear
+
+Oh yeah, we need sound
+
+- created the pish noise in Audacity and imported into the project and made an AudioSourcePishPrefab out of it.
+Will have to see if that's how you do it!
+
+ooh neat https://unity3d.com/learn/tutorials/projects/2d-roguelike/audio has some simple stuff in a singleton that does some little
+Wwise-like things like a randomize container - ok, well, just that.
+COOL THAT PARAMS KEYWORD IS A SORT OF VARARGS THING 
+
+But I pulled that cs in as SoundManager.cs, just discarded their namespace thing.
+
+I assume I can only play one sfx at a time under this scheme?
+
+Re: free sfx looks like there are a lot of sites, and maybe some Audacity plugins I could get - check this thing http://www.bfxr.net/
+
+http://www.audacityteam.org/download/plug-ins/
+
+5/15:
+Getting Game Manager hooked up - currently plane almost works, shoe doesn't. FIGURE OUT!
+
+And further, but trigger isn't triggering. If I make the floor non-trigger and bouncy, the shoe bounces.
+
+http://answers.unity3d.com/questions/815221/ontriggerenter-not-being-called.html
+
+Which sez http://docs.unity3d.com/Manual/CollidersOverview.html has a list of type-type collision interactions.
+Rigidbody collider and static trigger collider is what I have and should work
+
+OH BUT IF YOU USE THE 2D PHYSICS AND COLLIDER STUFF YOU HAVE TO USE THE 2D VERSIONS OF THE ONTRIGGERENTER N STUFF.
+
+So next up: Grops.
+
+We should start with none on the screen, and they come in from the sides. Each grop is sort of like the plane - starts off screen,
+moves until it reaches its max/min (depending on direction) x coord - then, I guess, gets destroyed? Not sure.
+Have to make it so there are never more than 2 grops on each row and their spacing is right.
+
+I guess could just track the position of each grop, whether or not the grop actually exists, perhaps in the game manager. When it comes time for
+a non-existing grop to appear at its initial location, create one there; if an existing one has moved to its furthest location, destroy it.
+
+And of course if one is hit by a shoe, do whatever happens (inc score, destroy the grop)
+
+5/14:
+Stuff is basically starting to work - I still might make it all 3D quads instead of sprites so as to make it easier to scale everything to 
+fit, or something. The Physics2D should still work, yes?
+
+It seems to work to make the quads have the same aspect ratio as the sprite artwork, then just put the sprite art on there.
+Plane art is 160x90, 1.778 -
+Grop is 230x90, 2.556
+
+For some reason texture compression needs the art to be scaled to 4-pixel aligned sizes - but I can just create them that way later.
+
+
+5/12/16: OK, so. Looking at the old Drop Zone 4 flyer, I'd guess the screen is divided into 8 rows.
+The plane occupies the top one, the targets the bottom three.
+I'm mocking up in 1024x768 but should maybe mock up in 1920 x 1080, or perhaps 720p
+K so now they're 1280x720
+I also wanted to make a cutout thingy that looked like the roundy edges of an old TV. That should occupy the inset 4x3 in the center.
+Which is 960x720.
+The top and bottom row should be covered up just a little bit by this, maybe, or better space them up a little - say use the 853x640 centered in it.
+Have it so the whole screen is clear of the bezel, then.
+OK, so I have a bezel.png in MocksNDocs that is a simple grey bezel shape.
+That should be the topmost thing in the scene, then the color tape sprites - and IIRC the way to handle them on PS1 was to have them subtract yellow instead of adding blue, etc.
+Have to see if I can do that. 
+Layers:
+top: bezel
+middle: colored tape
+lower middle: score and number of bombs left
+bottom: sprites
+
+Oh hey and Donald in testing said that there are a jillion youtube vids and tutorials out there to teach you Unity.
+

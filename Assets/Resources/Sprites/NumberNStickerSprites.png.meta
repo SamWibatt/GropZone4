@@ -1,0 +1,257 @@
+fileFormatVersion: 2
+guid: 78703352b17d82b48a42d8d61c7481bb
+timeCreated: 1463602165
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Digit_0
+    21300002: Digit_1
+    21300004: Digit_2
+    21300006: Digit_3
+    21300008: Digit_4
+    21300010: Digit_5
+    21300012: Digit_6
+    21300014: Digit_7
+    21300016: Digit_8
+    21300018: Digit_9
+    21300020: Sticker_Score
+    21300022: Sticker_Shoes
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Digit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 197
+        width: 56
+        height: 59
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 0}
+        - {x: 0, y: -59}
+        - {x: 55, y: -59}
+        - {x: 56, y: -58}
+        - {x: 56, y: 0}
+      - - {x: 13, y: -8}
+        - {x: 42, y: -8}
+        - {x: 42, y: -49}
+        - {x: 13, y: -49}
+    - name: Digit_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 197
+        width: 56
+        height: 59
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 0}
+        - {x: 0, y: -59}
+        - {x: 56, y: -59}
+        - {x: 56, y: -48}
+        - {x: 34, y: 0}
+    - name: Digit_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 198
+        width: 57
+        height: 58
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 0}
+        - {x: 0, y: -58}
+        - {x: 57, y: -58}
+        - {x: 57, y: 0}
+    - name: Digit_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 198
+        width: 56
+        height: 58
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 0}
+        - {x: 0, y: -58}
+        - {x: 56, y: -58}
+        - {x: 56, y: 0}
+    - name: Digit_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 134
+        width: 57
+        height: 58
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 0}
+        - {x: 0, y: -32}
+        - {x: 43, y: -58}
+        - {x: 56, y: -58}
+        - {x: 57, y: -57}
+        - {x: 57, y: 0}
+    - name: Digit_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 133
+        width: 57
+        height: 59
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 0}
+        - {x: 0, y: -59}
+        - {x: 57, y: -59}
+        - {x: 57, y: 0}
+    - name: Digit_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 133
+        width: 59
+        height: 59
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 0}
+        - {x: 0, y: -59}
+        - {x: 57, y: -59}
+        - {x: 57, y: 0}
+    - name: Digit_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 134
+        width: 56
+        height: 58
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 0}
+        - {x: 0, y: -8}
+        - {x: 43, y: -57}
+        - {x: 44, y: -58}
+        - {x: 56, y: -58}
+        - {x: 56, y: 0}
+    - name: Digit_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 69
+        width: 56
+        height: 59
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 0}
+        - {x: 0, y: -59}
+        - {x: 53, y: -59}
+        - {x: 55, y: -57}
+        - {x: 55, y: 0}
+    - name: Digit_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 70
+        width: 57
+        height: 58
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 0}
+        - {x: 0, y: -58}
+        - {x: 56, y: -58}
+        - {x: 57, y: -57}
+        - {x: 57, y: 0}
+    - name: Sticker_Score
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 126
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sticker_Shoes
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 7
+        width: 125
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -62.5, y: 28}
+        - {x: -62.5, y: -28}
+        - {x: 62.5, y: -28}
+        - {x: 62.5, y: 28}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
