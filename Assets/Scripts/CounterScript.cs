@@ -28,8 +28,8 @@ public class CounterScript : MonoBehaviour {
 		digitAndStickerSprites = Resources.LoadAll<Sprite> ("Sprites/NumberNStickerSprites");
 
 		//get handles on our sprite objects' renderers so we can change the digits - might need to get the renderer otf?
-		onesDigit = transform.FindChild("OnesDigit");
-		tensDigit = transform.FindChild ("TensDigit");
+		onesDigit = transform.Find("OnesDigit");
+		tensDigit = transform.Find ("TensDigit");
 
 		//and init our counter to blank - not sure this is needed, but wev
 		SetValue (-1);
@@ -38,7 +38,7 @@ public class CounterScript : MonoBehaviour {
 	//THIS IS A HORRIBLE HARDCODE THING THAT ASSUMES THE STICKERS ARE JUST WHATEVER SPRITES ARE AFTER THE FIRST TEN IN digitAndStickerSprites
 	//so pass in 0 for score, 1 for shoes.
 	public void setSticker(int newsticker, float xoff, float yoff) {
-		Transform kid = transform.FindChild ("Sticker");
+		Transform kid = transform.Find ("Sticker");
 		kid.GetComponent<SpriteRenderer> ().sprite = digitAndStickerSprites[10+newsticker];
 		kid.transform.position = new Vector3(transform.position.x + xoff,transform.position.y + yoff);
 	}

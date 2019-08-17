@@ -1,4 +1,6 @@
-﻿//OK HACKING UP WHAT I FOUND AT http://www.alanzucconi.com/2015/07/01/vertex-and-fragment-shaders-in-unity3d/
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+//OK HACKING UP WHAT I FOUND AT http://www.alanzucconi.com/2015/07/01/vertex-and-fragment-shaders-in-unity3d/
 //IS HOW I DID THIS. The line with "Zwrite On" etc. is the last change that made it work, not sure why, could be the
 //blend - can look into later.
 Shader "Custom/ColorTapeShader"
@@ -48,7 +50,7 @@ Shader "Custom/ColorTapeShader"
 			v2f_vct vert (vin_vct v)
 			{
 				v2f_vct o;
-				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.vertex = UnityObjectToClipPos(v.vertex);
 				o.uvgrab = ComputeGrabScreenPos(o.vertex);
 				return o;
 			}
