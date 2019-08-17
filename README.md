@@ -1,8 +1,11 @@
 # GropZone4
 Small Unity project about dropping shoes on grasshoppers from a great height, 1974-style!
 
-Originally written in mid-2016, this project now loads and runs in Unity 2019.2.1f1 on Ubuntu, at least. I haven't yet tried exporting standalone versions.
+* Originally written in mid-2016, this project now loads and runs in Unity 2019.2.1f1 on Ubuntu, at least. I haven't yet tried exporting standalone versions. 
 
+* The big change I had to make was to comment out obsolete platform cases in  Assets/Editor/CrossPlatformInput/CrossPlatformInputInitialize.cs - what, nobody wants a Blackberry version anymore? That file may need to be repaired.
+
+* The DocsNMocks directory contains a design notes file of my stream of consciousness discovery of Unity in the course of writing this little thing. Code comments do similar.
 
 ----
 ## About
@@ -13,7 +16,7 @@ So! Grop Zone 4. A video game in which you squash grasshoppers by dropping shoes
 
 ![In all its glory](images/screenshot.jpg)
 
-**PC Version**
+**Pictured: PC Version**
 
 This video-bagatelle is a super simple 70s-style game I wrote, based on a real 70s game I didn't write, to begin familiarizing myself with the Unity game development system (http://unity3d.com/). A couple folks requested copies and have had a good time with the game, so here I will put up links for anyone else wanting to give it a go.
 
