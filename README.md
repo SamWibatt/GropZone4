@@ -1,3 +1,5 @@
+# MIGRATING FROM GITHUB TO GITLAB at https://gitlab.com/SamWibatt/gropzone4 - please go to that repository unless you're already there
+
 # GropZone4
 Small Unity project about dropping shoes on grasshoppers from a great height, 1974-style!
 
